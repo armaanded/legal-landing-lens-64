@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -17,17 +16,15 @@ const Index = () => {
   const heroRef = useRef(null);
   const servicesRef = useRef(null);
   const aboutRef = useRef(null);
-  const testimonialsRef = useRef(null);
   const contactRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY + window.innerHeight / 4;
       const sectionTops = [
-        { section: null, top: heroRef.current?.offsetTop ?? 0 }, // null means no nav highlight
+        { section: null, top: heroRef.current?.offsetTop ?? 0 },
         { section: 'services', top: servicesRef.current?.offsetTop ?? 0 },
         { section: 'about', top: aboutRef.current?.offsetTop ?? 0 },
-        { section: 'testimonials', top: testimonialsRef.current?.offsetTop ?? 0 },
         { section: 'contact', top: contactRef.current?.offsetTop ?? 0 },
       ];
       let current = sectionTops[0].section;
@@ -54,7 +51,6 @@ const Index = () => {
         <div ref={heroRef}><Hero onHeadlineDone={() => setShowNavbar(true)} /></div>
         <div ref={servicesRef}><Services /></div>
         <div ref={aboutRef}><About /></div>
-        <div ref={testimonialsRef}><Testimonials /></div>
         <CTA />
         <div ref={contactRef}><Contact /></div>
       </main>

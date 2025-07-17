@@ -6,14 +6,13 @@ import { Menu } from 'lucide-react';
 const NAV_LINKS = [
   { href: '#services', label: 'SERVICES', section: 'services' },
   { href: '#about', label: 'ABOUT', section: 'about' },
-  { href: '#testimonials', label: 'TESTIMONIALS', section: 'testimonials' },
   { href: '#contact', label: 'CONTACT', section: 'contact' },
 ];
 
 const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [show, setShow] = useState([false, false, false, false, false]);
+  const [show, setShow] = useState([false, false, false, false]);
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   useEffect(() => {
@@ -32,10 +31,10 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
 
   useEffect(() => {
     if (fadeIn) {
-      setShow([false, false, false, false, false]);
+      setShow([false, false, false, false]);
       setCurrentIndex(0);
     } else {
-      setShow([false, false, false, false, false]);
+      setShow([false, false, false, false]);
       setCurrentIndex(-1);
     }
   }, [fadeIn]);
