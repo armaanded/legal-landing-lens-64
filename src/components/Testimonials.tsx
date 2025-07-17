@@ -1,27 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 
-const testimonials = [
-  {
-    quote: "The team at LegalAdvisory provided exceptional guidance during our company merger. Their strategic advice was instrumental in navigating complex negotiations.",
-    author: "Sarah Johnson",
-    title: "CEO, Innovate Tech",
-    rating: 5
-  },
-  {
-    quote: "I've worked with many legal advisors over my career, but none have matched the level of expertise and personalized service that LegalAdvisory delivers.",
-    author: "Michael Chen",
-    title: "CFO, Global Enterprises",
-    rating: 5
-  },
-  {
-    quote: "Their proactive approach to regulatory compliance saved our company from potential issues. They don't just solve problems—they prevent them.",
-    author: "Rebecca Torres",
-    title: "Operations Director, Nexus Corp",
-    rating: 5
-  }
-];
-
 const Testimonials = () => {
   return (
     <section id="testimonials" className="py-24 lg:py-32 bg-white">
