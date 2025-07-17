@@ -5,23 +5,23 @@ import { Button } from "@/components/ui/button";
 const servicesData = [
   {
     icon: <Gavel className="h-8 w-8 text-gold" />,
-    title: "Legal Consulting",
-    description: "Strategic legal advice to guide critical business decisions and minimize legal risks.",
+    title: "Strategic Advisory",
+    description: "Independent analysis and guidance when conventional wisdom falls short of solving complex challenges.",
   },
   {
     icon: <Briefcase className="h-8 w-8 text-gold" />,
-    title: "Contract Review & Negotiation",
-    description: "Thorough analysis and negotiation of contracts to protect your interests and ensure favorable terms.",
+    title: "Crisis Management",
+    description: "Clear-headed leadership and decisive action when organizations face critical turning points.",
   },
   {
     icon: <Users className="h-8 w-8 text-gold" />,
-    title: "Corporate Governance",
-    description: "Expert guidance on governance structures, compliance programs, and best practices.",
+    title: "Organizational Restructuring",
+    description: "Innovative approaches to realigning teams, processes, and structures for optimal performance.",
   },
   {
     icon: <FileText className="h-8 w-8 text-gold" />,
-    title: "Regulatory Compliance",
-    description: "Comprehensive compliance solutions to navigate complex regulatory environments effectively.",
+    title: "Business Transformation",
+    description: "Guiding organizations through fundamental changes that require thinking beyond traditional boundaries.",
   }
 ];
 
@@ -33,12 +33,12 @@ const Services = () => {
           {/* Left Column - Header */}
           <div>
             <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
-              Solving
+              Independent
               <br />
-              <span className="font-medium">Complex Legal Problems</span>
+              <span className="font-medium">Strategic Advisory</span>
             </h2>
             <p className="font-inter text-lg text-gray-600 leading-relaxed">
-              LegalAdvisory is a strategic legal advisory firm. We provide market leading advice on transformational business transactions and devise solutions for high intensity legal challenges.
+              Cattledog Advisory provides unconventional solutions for complex business challenges. When traditional approaches fail, we chart a different path forward with clear-eyed analysis and strategic thinking.
             </p>
           </div>
           

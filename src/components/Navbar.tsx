@@ -28,9 +28,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className={`font-playfair font-light text-2xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-              LEGALADVISORY
+              CATTLEDOG
               <br />
-              <span className="text-xs font-normal tracking-widest">STRATEGIC ADVISORS</span>
+              <span className="text-xs font-normal tracking-widest">ADVISORY</span>
             </a>
           </div>
           

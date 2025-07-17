@@ -17,9 +17,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         <h1 className="font-playfair text-4xl md:text-5xl lg:text-7xl font-light text-white mb-8 leading-tight">
-          We provide expert and
+          Solving problems when
           <br />
-          <span className="font-medium">independent legal advice</span>
+          <span className="font-medium">the herd cannot</span>
         </h1>
         
         <div className="mt-16">

@@ -13,14 +13,14 @@ const Contact = () => {
           
           <div className="max-w-2xl mx-auto">
             <p className="font-inter text-lg text-gray-600 leading-relaxed mb-12">
-              Contact us to discuss your legal challenges and discover how our strategic advisory services can help your business navigate complex legal matters.
+              Ready to explore unconventional solutions? Contact us to discuss your most challenging problems and discover how independent thinking can unlock new possibilities.
             </p>
             
             <div className="space-y-8">
               <div>
                 <p className="font-inter text-sm text-gray-500 uppercase tracking-wide mb-2">Email</p>
-                <a href="mailto:info@legaladvisory.com" className="font-inter text-xl text-gray-900 hover:text-gray-600 transition-colors">
-                  info@legaladvisory.com
+                <a href="mailto:info@cattledogadvisory.com" className="font-inter text-xl text-gray-900 hover:text-gray-600 transition-colors">
+                  info@cattledogadvisory.com
                 </a>
               </div>
               
@@ -34,8 +34,8 @@ const Contact = () => {
               <div>
                 <p className="font-inter text-sm text-gray-500 uppercase tracking-wide mb-2">Office</p>
                 <p className="font-inter text-lg text-gray-900">
-                  123 Legal Street, Suite 500<br />
-                  New York, NY 10001
+                  100 Independence Way, Suite 200<br />
+                  Austin, TX 78701
                 </p>
               </div>
             </div>
