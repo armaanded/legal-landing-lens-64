@@ -117,3 +117,11 @@
 .card {
   padding: 0;
 }
+
+@keyframes subtle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.subtle-bounce {
+  animation: subtle-bounce 1.2s infinite;
+}
