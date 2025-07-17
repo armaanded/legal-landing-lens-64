@@ -23,44 +23,45 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm py-3' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="font-playfair font-bold text-2xl text-navy">
-              LegalAdvisory
+            <a href="#" className={`font-playfair font-light text-2xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+              LEGALADVISORY
+              <br />
+              <span className="text-xs font-normal tracking-widest">STRATEGIC ADVISORS</span>
             </a>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <a href="#services" className="text-navy hover:text-gold transition-colors font-inter font-medium">Services</a>
-            <a href="#about" className="text-navy hover:text-gold transition-colors font-inter font-medium">About</a>
-            <a href="#testimonials" className="text-navy hover:text-gold transition-colors font-inter font-medium">Testimonials</a>
-            <a href="#contact" className="text-navy hover:text-gold transition-colors font-inter font-medium">Contact</a>
+          <nav className="hidden md:flex items-center space-x-12">
+            <a href="#services" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>SERVICES</a>
+            <a href="#about" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>ABOUT</a>
+            <a href="#testimonials" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>TESTIMONIALS</a>
+            <a href="#contact" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>CONTACT</a>
           </nav>
-          
-          <div className="hidden md:block">
-            <Button className="bg-navy hover:bg-navy/90 text-white">Schedule a Consultation</Button>
-          </div>
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-navy" 
+            className={`md:hidden ${isScrolled ? 'text-gray-900' : 'text-white'}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <Menu size={24} />
+            <div className="space-y-1">
+              <div className="w-6 h-px bg-current"></div>
+              <div className="w-6 h-px bg-current"></div>
+              <div className="w-6 h-px bg-current"></div>
+            </div>
           </button>
         </div>
         
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 space-y-4 flex flex-col">
-            <a href="#services" className="text-navy hover:text-gold transition-colors font-inter font-medium">Services</a>
-            <a href="#about" className="text-navy hover:text-gold transition-colors font-inter font-medium">About</a>
-            <a href="#testimonials" className="text-navy hover:text-gold transition-colors font-inter font-medium">Testimonials</a>
-            <a href="#contact" className="text-navy hover:text-gold transition-colors font-inter font-medium">Contact</a>
-            <Button className="bg-navy hover:bg-navy/90 text-white mt-2 w-full">Schedule a Consultation</Button>
+          <nav className="md:hidden mt-8 pb-6 space-y-6 flex flex-col border-t border-white/20 pt-6">
+            <a href="#services" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>SERVICES</a>
+            <a href="#about" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>ABOUT</a>
+            <a href="#testimonials" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>TESTIMONIALS</a>
+            <a href="#contact" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-gray-400 transition-colors font-inter font-light text-sm tracking-wide`}>CONTACT</a>
           </nav>
         )}
       </div>
