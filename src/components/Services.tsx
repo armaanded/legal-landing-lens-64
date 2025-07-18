@@ -62,16 +62,21 @@ const Services = () => {
               
               {/* Content */}
               <div className="relative z-10 text-center min-h-[200px] flex flex-col justify-center items-center">
-                {service.icon}
+                <div className="mb-4">
+                  {service.icon}
+                </div>
                 
                 {/* Title - visible by default, fades out on hover */}
-                <h3 className="font-playfair text-xl font-medium text-gray-900 group-hover:opacity-0 transition-opacity duration-300 absolute inset-0 flex items-center justify-center pt-14 text-center">
+                <h3 className="font-playfair text-xl font-medium text-gray-900 group-hover:opacity-0 transition-opacity duration-300 text-center">
                   {service.title}
                 </h3>
                 
                 {/* Description - hidden by default, fades in on hover */}
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-center justify-center pt-14 text-center">
-                  <p className="font-inter text-gray-600 leading-relaxed text-sm px-2 text-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex flex-col items-center justify-center text-center px-2">
+                  <div className="mb-4">
+                    {service.icon}
+                  </div>
+                  <p className="font-inter text-gray-600 leading-relaxed text-sm text-center">
                     {service.description}
                   </p>
                 </div>
