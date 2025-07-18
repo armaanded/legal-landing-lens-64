@@ -62,7 +62,7 @@ const Services = () => {
               
               {/* Content */}
               <div className="relative z-10 text-center min-h-[200px] flex flex-col justify-center items-center">
-                <div className="mb-4">
+                <div className={`mb-4 transition-opacity duration-300 ${'group-hover:opacity-0'}`}>
                   {service.icon}
                 </div>
                 
@@ -73,9 +73,6 @@ const Services = () => {
                 
                 {/* Description - hidden by default, fades in on hover */}
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex flex-col items-center justify-center text-center px-2">
-                  <div className="mb-4">
-                    {service.icon}
-                  </div>
                   <p className="font-inter text-gray-600 leading-relaxed text-sm text-center">
                     {service.description}
                   </p>
