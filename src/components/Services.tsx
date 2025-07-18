@@ -55,23 +55,23 @@ const Services = () => {
           {servicesData.map((service, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer border-l-4 border-gold hover:border-navy relative overflow-hidden"
+              className="group bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border-l-4 border-gold hover:border-navy relative overflow-hidden"
             >
               {/* Background gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Content */}
-              <div className="relative z-10 text-center min-h-[200px] flex flex-col justify-center">
+              <div className="relative z-10 text-center min-h-[200px] flex flex-col justify-center items-center">
                 {service.icon}
                 
                 {/* Title - visible by default, fades out on hover */}
-                <h3 className="font-playfair text-xl font-medium text-gray-900 group-hover:opacity-0 transition-opacity duration-300 absolute inset-0 flex items-center justify-center pt-14">
+                <h3 className="font-playfair text-xl font-medium text-gray-900 group-hover:opacity-0 transition-opacity duration-300 absolute inset-0 flex items-center justify-center pt-14 text-center">
                   {service.title}
                 </h3>
                 
                 {/* Description - hidden by default, fades in on hover */}
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-center justify-center pt-14">
-                  <p className="font-inter text-gray-600 leading-relaxed text-sm px-2">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-center justify-center pt-14 text-center">
+                  <p className="font-inter text-gray-600 leading-relaxed text-sm px-2 text-center">
                     {service.description}
                   </p>
                 </div>
