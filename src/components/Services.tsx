@@ -139,12 +139,12 @@ const Services = () => {
                   </h3>
                   
                   {/* Description */}
-                  <p className="font-inter text-gray-600 group-hover:text-white/90 leading-relaxed transition-colors duration-500 flex-grow">
+                  <p className="font-inter text-gray-600 group-hover:text-white/90 leading-relaxed transition-all duration-500 flex-grow opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-32 group-hover:mt-4">
                     {service.description}
                   </p>
 
                   {/* Animated arrow that appears on hover */}
-                  <div className="mt-6 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-500">
+                  <div className="mt-2 group-hover:mt-6 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-500">
                     <div className="flex items-center text-white font-medium">
                       <span className="mr-2">Learn More</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
