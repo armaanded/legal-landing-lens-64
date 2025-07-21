@@ -99,70 +99,75 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {servicesData.map((service, index) => (
-            <div 
+            <div
               key={index}
-              className={`group relative transform transition-all duration-700 ease-out ${
-                visibleCards.includes(index) 
-                  ? 'translate-y-0 opacity-100' 
+              className={`group relative h-full ${
+                visibleCards.includes(index)
+                  ? 'translate-y-0 opacity-100'
                   : 'translate-y-12 opacity-0'
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Main Card */}
-              <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border border-gray-100 overflow-hidden h-full">
-                
-                {/* Gradient overlay that appears on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-95 transition-all duration-500 rounded-2xl`}></div>
-                
-                {/* Animated background pattern */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 20% 50%, white 2px, transparent 2px), radial-gradient(circle at 80% 50%, white 2px, transparent 2px)`,
-                    backgroundSize: '30px 30px'
-                  }}></div>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 h-full flex flex-col">
-                  {/* Icon container */}
-                  <div className="mb-6">
-                    <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
-                      {service.icon}
+              <div
+                className={`transition-all duration-500 relative z-10 ${
+                  hoveredCard === index
+                    ? 'absolute inset-0 w-full h-full z-20 scale-105 shadow-2xl'
+                    : 'relative w-full h-full'
+                }`}
+                style={
+                  hoveredCard === index
+                    ? { boxShadow: '0 8px 40px 0 rgba(0,0,0,0.18)' }
+                    : {}
+                }
+              >
+                {/* Main Card */}
+                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border border-gray-100 overflow-hidden h-full">
+                  {/* Gradient overlay that appears on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-95 transition-all duration-500 rounded-2xl`}></div>
+                  {/* Animated background pattern */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                    <div className="absolute inset-0" style={{
+                      backgroundImage: `radial-gradient(circle at 20% 50%, white 2px, transparent 2px), radial-gradient(circle at 80% 50%, white 2px, transparent 2px)`,
+                      backgroundSize: '30px 30px'
+                    }}></div>
+                  </div>
+                  {/* Content */}
+                  <div className="relative z-10 h-full flex flex-col">
+                    {/* Icon container */}
+                    <div className="mb-6">
+                      <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                        {service.icon}
+                      </div>
+                    </div>
+                    {/* Title */}
+                    <h3 className="font-playfair text-2xl font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4">
+                      {service.title}
+                    </h3>
+                    {/* Description */}
+                    <p className="font-inter text-gray-600 group-hover:text-white/90 leading-relaxed transition-all duration-500 flex-grow opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-32 group-hover:mt-4">
+                      {service.description}
+                    </p>
+                    {/* Animated arrow that appears on hover */}
+                    <div className="mt-2 group-hover:mt-6 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-500">
+                      <div className="flex items-center text-white font-medium">
+                        <span className="mr-2">Learn More</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Title */}
-                  <h3 className="font-playfair text-2xl font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4">
-                    {service.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="font-inter text-gray-600 group-hover:text-white/90 leading-relaxed transition-all duration-500 flex-grow opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-32 group-hover:mt-4">
-                    {service.description}
-                  </p>
-
-                  {/* Animated arrow that appears on hover */}
-                  <div className="mt-2 group-hover:mt-6 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-500">
-                    <div className="flex items-center text-white font-medium">
-                      <span className="mr-2">Learn More</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                  {/* Decorative corner elements */}
+                  <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                    <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-full"></div>
+                    <div className="absolute top-8 right-8 w-1 h-1 bg-white rounded-full"></div>
                   </div>
                 </div>
-
-                {/* Decorative corner elements */}
-                <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-full"></div>
-                  <div className="absolute top-8 right-8 w-1 h-1 bg-white rounded-full"></div>
-                </div>
+                {/* Floating shadow effect */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500 transform scale-95 group-hover:scale-100 -z-10`}></div>
               </div>
-
-              {/* Floating shadow effect */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500 transform scale-95 group-hover:scale-100 -z-10`}></div>
             </div>
           ))}
         </div>
