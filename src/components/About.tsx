@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -53,12 +54,14 @@ const About = () => {
             >
               Our mission is to guide leaders and organizations through complex challenges with fresh perspective, strategic thinking, and the courage to recommend unconventional solutions when they're what's needed.
             </p>
-            <Button 
-              variant="outline" 
-              className={`border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white rounded-none font-medium px-8 py-3 transition-all duration-700 ${stagger[3] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}
-            >
-              About Cattledog
-            </Button>
+            <a href="mailto:armaan@legalgraph.ai">
+              <Button 
+                variant="outline" 
+                className={`border-gray-900 text-transparent hover:text-white hover:bg-gray-900 rounded-none font-medium px-8 py-3 transition-all duration-700 ${stagger[3] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}
+              >
+                Get to Know Us More
+              </Button>
+            </a>
           </div>
         </div>
       </div>
