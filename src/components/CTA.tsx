@@ -17,7 +17,7 @@ const CTA = () => {
             <Button className="bg-gold hover:bg-gold/90 text-navy text-lg py-6 px-8">
               Schedule a Consultation
             </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-navy text-lg py-6 px-8">
+            <Button variant="outline" className="border-white text-gold hover:bg-white hover:text-navy text-lg py-6 px-8">
               Learn More
             </Button>
           </div>
