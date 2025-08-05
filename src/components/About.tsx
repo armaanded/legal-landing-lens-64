@@ -57,7 +57,7 @@ const About = () => {
             <a href="mailto:armaan@legalgraph.ai">
               <Button 
                 variant="outline" 
-                className={`border-gray-900 text-transparent hover:text-white hover:bg-gray-900 rounded-none font-medium px-8 py-3 transition-all duration-700 ${stagger[3] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}
+                className={`border-gray-900 text-gray-900 hover:text-white hover:bg-gray-900 rounded-none font-medium px-8 py-3 transition-all duration-700 ${stagger[3] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}
               >
                 Get to Know Us More
               </Button>
