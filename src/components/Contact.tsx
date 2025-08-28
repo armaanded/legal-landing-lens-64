@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 
 const Contact = () => {
@@ -40,10 +41,10 @@ const Contact = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
+          <h2 className="font-salaryman text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
             Get in Touch
           </h2>
-          <p className="font-inter text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="font-salaryman text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam nec facilisis erat. Suspendisse potenti. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.
           </p>
         </div>

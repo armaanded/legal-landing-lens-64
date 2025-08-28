@@ -76,7 +76,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
             <a
               href="#"
               onClick={handleLogoClick}
-              className={`font-playfair font-light text-2xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+              className={`font-salaryman font-light text-2xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}
             >
               CATTLEDOG
               <br />
@@ -90,7 +90,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
                 key={link.href}
                 href={link.href}
                 className={
-                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-inter font-light text-sm tracking-wide ${getAnim(idx + 1)} ` +
+                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-salaryman font-light text-sm tracking-wide ${getAnim(idx + 1)} ` +
                   (activeSection === link.section
                     ? ' bg-black text-white px-4 py-2 rounded transition-colors duration-200'
                     : 'hover:text-gray-400 transition-colors')
@@ -120,7 +120,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
                 key={link.href}
                 href={link.href}
                 className={
-                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-inter font-light text-sm tracking-wide ` +
+                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-salaryman font-light text-sm tracking-wide ` +
                   (activeSection === link.section
                     ? ' bg-black text-white px-4 py-2 rounded transition-colors duration-200'
                     : 'hover:text-gray-400 transition-colors')
