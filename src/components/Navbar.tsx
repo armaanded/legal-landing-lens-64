@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu } from 'lucide-react';
@@ -80,7 +79,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
             <a
               href="#"
               onClick={handleLogoClick}
-              className="flex items-center space-x-3"
+              className="flex items-center"
             >
               <img 
                 src="/lovable-uploads/9aca6763-9825-45d6-b922-0722c0f1aa21.png" 
@@ -89,11 +88,6 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
                   isScrolled ? 'brightness-0' : 'brightness-0 invert'
                 }`}
               />
-              <div className={`font-salaryman font-light text-xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                CATTLEDOG
-                <br />
-                <span className="text-xs font-normal tracking-widest">ADVISORY</span>
-              </div>
             </a>
           </div>
           {/* Desktop Navigation */}
