@@ -69,18 +69,31 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-700 ${isScrolled ? 'bg-white shadow-sm py-3' : 'bg-transparent py-6'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-700 ${
+      isScrolled 
+        ? 'bg-white shadow-sm py-3' 
+        : 'bg-gradient-to-b from-black/30 via-black/20 to-transparent py-6'
+    }`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <div className={`flex items-center ${getAnim(0)}`}> {/* Logo */}
             <a
               href="#"
               onClick={handleLogoClick}
-              className={`font-salaryman font-light text-2xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+              className="flex items-center space-x-3"
             >
-              CATTLEDOG
-              <br />
-              <span className="text-xs font-normal tracking-widest">ADVISORY</span>
+              <img 
+                src="/lovable-uploads/9aca6763-9825-45d6-b922-0722c0f1aa21.png" 
+                alt="Cattledog Advisory Logo" 
+                className={`h-8 w-auto transition-all duration-300 ${
+                  isScrolled ? 'brightness-0' : 'brightness-0 invert'
+                }`}
+              />
+              <div className={`font-salaryman font-light text-xl tracking-wide ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+                CATTLEDOG
+                <br />
+                <span className="text-xs font-normal tracking-widest">ADVISORY</span>
+              </div>
             </a>
           </div>
           {/* Desktop Navigation */}
