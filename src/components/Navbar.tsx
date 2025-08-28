@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu } from 'lucide-react';
@@ -85,7 +86,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
               <img 
                 src="/lovable-uploads/9aca6763-9825-45d6-b922-0722c0f1aa21.png" 
                 alt="Cattledog Advisory Logo" 
-                className={`h-8 w-auto transition-all duration-300 ${
+                className={`h-10 w-auto transition-all duration-300 ${
                   isScrolled ? 'brightness-0' : 'brightness-100'
                 }`}
               />
@@ -145,3 +146,4 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
 };
 
 export default Navbar;
+
