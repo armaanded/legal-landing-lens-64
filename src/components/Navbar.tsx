@@ -83,11 +83,12 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
               onClick={handleLogoClick}
               className="flex items-center"
             >
-              <h1 className={`font-salaryman text-xl font-bold transition-all duration-300 ${
+              <div className={`font-salaryman font-bold transition-all duration-300 ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                CATTLEDOG ADVISORY
-              </h1>
+                <div className="text-xl leading-tight">CATTLEDOG</div>
+                <div className="text-sm leading-tight">ADVISORY</div>
+              </div>
             </a>
           </div>
           {/* Desktop Navigation */}

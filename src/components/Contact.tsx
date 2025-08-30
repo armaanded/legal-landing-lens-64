@@ -45,7 +45,7 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="font-salaryman text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget aliquam massa nisl quis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam nec facilisis erat. Suspendisse potenti. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.
+            Ready to break away from conventional approaches? We're here to help you navigate complex challenges and discover strategic solutions that others might overlook. Reach out to start the conversation about how Cattledog Advisory can guide your organization to new possibilities.
           </p>
         </div>
         <div className="max-w-xl mx-auto bg-white rounded-lg shadow-lg p-8">
