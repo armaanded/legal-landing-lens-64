@@ -6,13 +6,14 @@ import { Menu } from 'lucide-react';
 const NAV_LINKS = [
   { href: '#services', label: 'SERVICES', section: 'services' },
   { href: '#about', label: 'ABOUT', section: 'about' },
+  { href: '#blog', label: 'BLOG', section: 'blog' },
   { href: '#contact', label: 'CONTACT', section: 'contact' },
 ];
 
 const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [show, setShow] = useState([false, false, false, false]);
+  const [show, setShow] = useState([false, false, false, false, false]);
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   useEffect(() => {
@@ -31,10 +32,10 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
 
   useEffect(() => {
     if (fadeIn) {
-      setShow([false, false, false, false]);
+      setShow([false, false, false, false, false]);
       setCurrentIndex(0);
     } else {
-      setShow([false, false, false, false]);
+      setShow([false, false, false, false, false]);
       setCurrentIndex(-1);
     }
   }, [fadeIn]);
@@ -76,19 +77,17 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
     }`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <div className={`flex items-center ${getAnim(0)}`}> {/* Logo */}
+          <div className={`flex items-center ${getAnim(0)}`}>
             <a
               href="#"
               onClick={handleLogoClick}
               className="flex items-center"
             >
-              <img 
-                src="/lovable-uploads/9aca6763-9825-45d6-b922-0722c0f1aa21.png" 
-                alt="Cattledog Advisory Logo" 
-                className={`h-8 w-auto transition-all duration-300 ${
-                  isScrolled ? 'brightness-0' : 'brightness-100'
-                }`}
-              />
+              <h1 className={`font-salaryman text-xl font-bold transition-all duration-300 ${
+                isScrolled ? 'text-gray-900' : 'text-white'
+              }`}>
+                CATTLEDOG ADVISORY
+              </h1>
             </a>
           </div>
           {/* Desktop Navigation */}
