@@ -123,7 +123,10 @@ const Services = () => {
                 }
               >
                 {/* Main Card */}
-                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border border-gray-100 overflow-hidden h-full">
+                <a 
+                  href="mailto:gerald@cattledogadvisory.com?subject=Inquiry about Strategic Advisory Services&body=Hello, I would like to learn more about your services."
+                  className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border border-gray-100 overflow-hidden h-full block"
+                >
                   {/* Gradient overlay that appears on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-95 transition-all duration-500 rounded-2xl`}></div>
                   {/* Animated background pattern */}
@@ -164,7 +167,7 @@ const Services = () => {
                     <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-full"></div>
                     <div className="absolute top-8 right-8 w-1 h-1 bg-white rounded-full"></div>
                   </div>
-                </div>
+                </a>
                 {/* Floating shadow effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-500 transform scale-95 group-hover:scale-100 -z-10`}></div>
               </div>
@@ -178,10 +181,13 @@ const Services = () => {
             <p className="font-inter text-lg text-gray-700 mb-6 max-w-2xl">
               Ready to solve problems that conventional approaches can't handle?
             </p>
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-medium rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <a 
+              href="mailto:gerald@cattledogadvisory.com?subject=Schedule a Consultation&body=Hello, I would like to schedule a consultation to discuss my organization's challenges and how Cattledog Advisory can help."
+              className="group relative inline-block px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-medium rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
               <span className="relative z-10">Schedule a Consultation</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+            </a>
           </div>
         </div>
       </div>

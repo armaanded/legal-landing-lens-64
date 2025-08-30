@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
   { href: '#services', label: 'SERVICES', section: 'services' },
   { href: '#about', label: 'ABOUT', section: 'about' },
-  { href: '#blog', label: 'BLOG', section: 'blog' },
+  { href: '#blog', label: 'BLOGS', section: 'blog' },
   { href: '#contact', label: 'CONTACT', section: 'contact' },
 ];
 
@@ -15,6 +16,8 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [show, setShow] = useState([false, false, false, false, false]);
   const [currentIndex, setCurrentIndex] = useState(-1);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,11 +64,17 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
         : 'opacity-0 -translate-y-4'
     }`;
 
-  // Handle logo click to scroll to hero
+  // Handle logo click to navigate to home page
   const handleLogoClick = (e) => {
-    if (heroRef && heroRef.current) {
-      e.preventDefault();
-      heroRef.current.scrollIntoView({ behavior: 'smooth' });
+    e.preventDefault();
+    if (location.pathname === '/') {
+      // If we're already on the home page, scroll to hero
+      if (heroRef && heroRef.current) {
+        heroRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on a different page, navigate to home
+      navigate('/');
     }
   };
 
@@ -98,7 +107,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
                 key={link.href}
                 href={link.href}
                 className={
-                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-salaryman font-light text-sm tracking-wide ${getAnim(idx + 1)} ` +
+                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-light text-sm tracking-wide ${getAnim(idx + 1)} ` +
                   (activeSection === link.section
                     ? ' bg-black text-white px-4 py-2 rounded transition-colors duration-200'
                     : 'hover:text-gray-400 transition-colors')
@@ -128,7 +137,7 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
                 key={link.href}
                 href={link.href}
                 className={
-                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-salaryman font-light text-sm tracking-wide ` +
+                  `${isScrolled ? 'text-gray-900' : 'text-white'} font-light text-sm tracking-wide ` +
                   (activeSection === link.section
                     ? ' bg-black text-white px-4 py-2 rounded transition-colors duration-200'
                     : 'hover:text-gray-400 transition-colors')

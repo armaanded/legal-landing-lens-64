@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Salaryman';
+  src: url('/fonts/SALARYMA.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -98,6 +112,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Roboto';
   }
 
   html {

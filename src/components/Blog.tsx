@@ -42,10 +42,10 @@ const Blog = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className={`font-salaryman text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight transition-all duration-700 ${stagger[0] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}>
+          <h2 className={` text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight transition-all duration-700 ${stagger[0] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}>
             Latest Insights
           </h2>
-          <p className={`font-salaryman text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto transition-all duration-700 ${stagger[1] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}>
+          <p className={` text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto transition-all duration-700 ${stagger[1] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}>
             Exploring the intersection of AI, compliance, and privacy law
           </p>
         </div>
@@ -67,10 +67,10 @@ const Blog = () => {
               </div>
               
               <div className="md:w-2/3 p-8">
-                <h3 className="font-salaryman text-2xl md:text-3xl font-medium text-gray-900 mb-4 group-hover:text-navy transition-colors">
+                <h3 className=" text-2xl md:text-3xl font-medium text-gray-900 mb-4 group-hover:text-navy transition-colors">
                   How AI Can Accelerate Compliance Reviews
                 </h3>
-                <p className="font-salaryman text-gray-600 mb-4 leading-relaxed">
+                <p className=" text-gray-600 mb-4 leading-relaxed">
                   Corporate Privacy Policies Under the Oregon Consumer Privacy Act
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">

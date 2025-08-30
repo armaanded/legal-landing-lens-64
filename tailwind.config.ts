@@ -19,9 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				salaryman: ['Salaryman', 'sans-serif'],
-				inter: ['Salaryman', 'sans-serif'],
-				playfair: ['Salaryman', 'sans-serif'],
+				sans: ['Roboto'],
+				salaryman: ['Salaryman'],
+				roboto: ['Roboto'],
 			},
 			colors: {
 				navy: '#0A2342',

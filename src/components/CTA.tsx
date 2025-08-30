@@ -14,12 +14,12 @@ const CTA = () => {
             Schedule a consultation with our team of experienced legal advisors today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="mailto:gerald@cattledogadvisory.com">
+            <a href="mailto:gerald@cattledogadvisory.com?subject=Schedule a Consultation&body=Hello, I would like to schedule a consultation to discuss how Cattledog Advisory can help transform my legal strategy.">
               <Button className="bg-gold hover:bg-gold/90 text-navy text-lg py-6 px-8">
                 Schedule a Consultation
               </Button>
             </a>
-            <a href="mailto:gerald@cattledogadvisory.com">
+            <a href="mailto:gerald@cattledogadvisory.com?subject=Learn More About Services&body=Hello, I would like to learn more about Cattledog Advisory's services and how you can help my organization.">
               <Button variant="outline" className="border-white text-black hover:bg-transparent hover:text-white text-lg py-6 px-8">
                 Learn More
               </Button>

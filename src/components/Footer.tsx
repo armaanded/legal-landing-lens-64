@@ -9,14 +9,14 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/lovable-uploads/9aca6763-9825-45d6-b922-0722c0f1aa21.png" 
+                src="/images/logo.png" 
                 alt="Cattledog Advisory Logo" 
                 className="h-8 w-auto mr-3"
               />
               <h3 className="font-salaryman text-xl font-bold">Cattledog Advisory</h3>
             </div>
-            <p className="font-salaryman text-white/70 mb-6">
-              Providing expert legal advisory services since 2010. We help navigate complex legal challenges with confidence and precision.
+            <p className=" text-white/70 mb-6">
+              Providing expert legal advisory services since 2025. We help navigate complex legal challenges with confidence and precision.
             </p>
             <div className="flex space-x-4">
               <a href="mailto:gerald@cattledogadvisory.com" className="text-white hover:text-gold transition-colors">
@@ -41,8 +41,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-salaryman text-xl font-bold mb-4">Services</h3>
-            <ul className="space-y-3 font-salaryman">
+            <h3 className=" text-xl font-bold mb-4">Services</h3>
+            <ul className="space-y-3 ">
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Legal Consulting</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Contract Review</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Corporate Governance</a></li>
@@ -52,8 +52,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-salaryman text-xl font-bold mb-4">Company</h3>
-            <ul className="space-y-3 font-salaryman">
+            <h3 className=" text-xl font-bold mb-4">Company</h3>
+            <ul className="space-y-3 ">
               <li><a href="#about" className="text-white/70 hover:text-gold transition-colors">About Us</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Our Team</a></li>
               <li><a href="#blog" className="text-white/70 hover:text-gold transition-colors">Blog</a></li>
@@ -63,8 +63,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-salaryman text-xl font-bold mb-4">Legal</h3>
-            <ul className="space-y-3 font-salaryman">
+            <h3 className=" text-xl font-bold mb-4">Legal</h3>
+            <ul className="space-y-3 ">
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Privacy Policy</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Terms of Service</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Cookie Policy</a></li>
@@ -74,10 +74,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="font-salaryman text-sm text-white/70 mb-4 md:mb-0">
+          <p className=" text-sm text-white/70 mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} Cattledog Advisory. All rights reserved.
           </p>
-          <p className="font-salaryman text-sm text-white/70">
+          <p className=" text-sm text-white/70">
             Designed and developed with excellence
           </p>
         </div>

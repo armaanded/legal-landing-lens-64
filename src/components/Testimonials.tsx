@@ -6,7 +6,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="font-salaryman text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-12 leading-tight">
+          <h2 className=" text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-12 leading-tight">
             Our Professionals
           </h2>
           
@@ -19,9 +19,9 @@ const Testimonials = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-salaryman text-xl font-medium text-gray-900 mb-2">Sarah Johnson</h3>
-              <p className="font-salaryman text-gray-600 mb-4">Senior Partner</p>
-              <p className="font-salaryman text-sm text-gray-500 leading-relaxed">
+              <h3 className=" text-xl font-medium text-gray-900 mb-2">Sarah Johnson</h3>
+              <p className=" text-gray-600 mb-4">Senior Partner</p>
+              <p className=" text-sm text-gray-500 leading-relaxed">
                 20+ years experience in corporate law and strategic advisory services.
               </p>
             </div>
@@ -34,9 +34,9 @@ const Testimonials = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-salaryman text-xl font-medium text-gray-900 mb-2">Michael Chen</h3>
-              <p className="font-salaryman text-gray-600 mb-4">Managing Director</p>
-              <p className="font-salaryman text-sm text-gray-500 leading-relaxed">
+              <h3 className=" text-xl font-medium text-gray-900 mb-2">Michael Chen</h3>
+              <p className=" text-gray-600 mb-4">Managing Director</p>
+              <p className=" text-sm text-gray-500 leading-relaxed">
                 Expert in regulatory compliance and business restructuring solutions.
               </p>
             </div>
@@ -49,9 +49,9 @@ const Testimonials = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-salaryman text-xl font-medium text-gray-900 mb-2">Rebecca Torres</h3>
-              <p className="font-salaryman text-gray-600 mb-4">Senior Advisor</p>
-              <p className="font-salaryman text-sm text-gray-500 leading-relaxed">
+              <h3 className=" text-xl font-medium text-gray-900 mb-2">Rebecca Torres</h3>
+              <p className=" text-gray-600 mb-4">Senior Advisor</p>
+              <p className=" text-sm text-gray-500 leading-relaxed">
                 Specialist in crisis management and dispute resolution strategies.
               </p>
             </div>

@@ -83,17 +83,19 @@ const Hero = ({ onHeadlineDone }) => {
       </div>
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
-        <h1 className={`font-salaryman text-4xl md:text-5xl lg:text-7xl font-light text-white mb-8 leading-tight transition-opacity duration-700 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+        <h1 className={`text-4xl md:text-5xl lg:text-7xl font-light text-white mb-8 leading-tight transition-opacity duration-700 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
           {lines[0]}
           {lines.length > 1 && <><br />{showBold ? <span className="font-medium">{lines[1]}</span> : lines[1]}</>}
         </h1>
         <div className={`mt-16 transition-opacity duration-700 ${showButton ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <Button 
-            className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-4 font-medium rounded-none"
-            size="lg"
-          >
-            Schedule a Consultation
-          </Button>
+          <a href="mailto:gerald@cattledogadvisory.com?subject=Schedule a Consultation&body=Hello, I would like to schedule a consultation to discuss how Cattledog Advisory can help solve my organization's challenges.">
+            <Button 
+              className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-4 font-medium rounded-none"
+              size="lg"
+            >
+              Schedule a Consultation
+            </Button>
+          </a>
         </div>
       </div>
       {/* Scroll Indicator */}
