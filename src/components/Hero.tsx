@@ -54,7 +54,6 @@ const Hero = ({ onHeadlineDone }) => {
           setShowScroll(true);
           setShowButton(true);
           if (onHeadlineDone) {
-            console.log('onHeadlineDone called');
             onHeadlineDone();
           }
         }, 300);
@@ -66,6 +65,14 @@ const Hero = ({ onHeadlineDone }) => {
 
   // Split lines for rendering
   const lines = typedText.split("\n");
+
+  const handleConsultationClick = () => {
+    // Scroll to contact form
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
@@ -88,14 +95,13 @@ const Hero = ({ onHeadlineDone }) => {
           {lines.length > 1 && <><br />{showBold ? <span className="font-medium">{lines[1]}</span> : lines[1]}</>}
         </h1>
         <div className={`mt-16 transition-opacity duration-700 ${showButton ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <a href="mailto:gerald@cattledogadvisory.com?subject=Schedule a Consultation&body=Hello, I would like to schedule a consultation to discuss how Cattledog Advisory can help solve my organization's challenges.">
             <Button 
+            onClick={handleConsultationClick}
               className="bg-white text-gray-900 hover:bg-gray-100 text-lg px-8 py-4 font-medium rounded-none"
               size="lg"
             >
               Schedule a Consultation
             </Button>
-          </a>
         </div>
       </div>
       {/* Scroll Indicator */}

@@ -15,14 +15,8 @@ const servicesData = [
     color: "from-red-600 to-red-700"
   },
   {
-    icon: <Users className="h-8 w-8 text-white" />,
-    title: "Organizational Restructuring",
-    description: "Innovative approaches to realigning teams, processes, and structures for optimal performance.",
-    color: "from-green-600 to-green-700"
-  },
-  {
     icon: <FileText className="h-8 w-8 text-white" />,
-    title: "Business Transformation",
+    title: "Fractional GC/Privacy Office Services",
     description: "Guiding organizations through fundamental changes that require thinking beyond traditional boundaries.",
     color: "from-purple-600 to-purple-700"
   },
@@ -32,18 +26,30 @@ const servicesData = [
     description: "Expert guidance through complex regulatory landscapes when standard approaches prove insufficient.",
     color: "from-orange-600 to-orange-700"
   },
-  {
-    icon: <Handshake className="h-8 w-8 text-white" />,
-    title: "Stakeholder Mediation",
-    description: "Resolving conflicts and aligning interests when traditional negotiation methods reach an impasse.",
-    color: "from-teal-600 to-teal-700"
-  }
 ];
 
 const Services = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const handleLearnMoreClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Scroll to contact form
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleConsultationClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Scroll to contact form
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,7 +103,7 @@ const Services = () => {
         </div>
         
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
           {servicesData.map((service, index) => (
             <div
               key={index}
@@ -124,7 +130,8 @@ const Services = () => {
               >
                 {/* Main Card */}
                 <a 
-                  href="mailto:gerald@cattledogadvisory.com?subject=Inquiry about Strategic Advisory Services&body=Hello, I would like to learn more about your services."
+                  href="#"
+                  onClick={handleLearnMoreClick}
                   className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border border-gray-100 overflow-hidden h-full block"
                 >
                   {/* Gradient overlay that appears on hover */}
@@ -182,7 +189,8 @@ const Services = () => {
               Ready to solve problems that conventional approaches can't handle?
             </p>
             <a 
-              href="mailto:gerald@cattledogadvisory.com?subject=Schedule a Consultation&body=Hello, I would like to schedule a consultation to discuss my organization's challenges and how Cattledog Advisory can help."
+              href="#"
+              onClick={handleConsultationClick}
               className="group relative inline-block px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white font-medium rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <span className="relative z-10">Schedule a Consultation</span>

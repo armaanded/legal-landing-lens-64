@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const NAV_LINKS = [
   { href: '#services', label: 'SERVICES', section: 'services' },
   { href: '#about', label: 'ABOUT', section: 'about' },
-  { href: '#blog', label: 'BLOGS', section: 'blog' },
+  { href: '#blog', label: 'INTEL', section: 'blog' },
   { href: '#contact', label: 'CONTACT', section: 'contact' },
 ];
 
@@ -71,11 +71,48 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
       // If we're already on the home page, scroll to hero
       if (heroRef && heroRef.current) {
         heroRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else {
       // If we're on a different page, navigate to home
       navigate('/');
     }
+  };
+
+  // Handle navigation links - works from any page
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    
+    if (location.pathname === '/') {
+      // We're on home page, just scroll to section
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // We're on a different page, navigate to home first
+      navigate('/');
+      // Wait for navigation and DOM to be ready, then scroll to section
+      // Use a more reliable method that checks for element existence
+      let attempts = 0;
+      const maxAttempts = 20; // 2 seconds max wait
+      const checkAndScroll = setInterval(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          clearInterval(checkAndScroll);
+        } else {
+          attempts++;
+          if (attempts >= maxAttempts) {
+            clearInterval(checkAndScroll);
+          }
+        }
+      }, 100);
+    }
+    
+    // Close mobile menu if open
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -102,10 +139,13 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
           </div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-12">
-            {NAV_LINKS.map((link, idx) =>
+            {NAV_LINKS.map((link, idx) => {
+              const sectionId = link.href.replace('#', '');
+              return (
               <a
                 key={link.href}
                 href={link.href}
+                  onClick={(e) => handleNavClick(e, sectionId)}
                 className={
                   `${isScrolled ? 'text-gray-900' : 'text-white'} font-light text-sm tracking-wide ${getAnim(idx + 1)} ` +
                   (activeSection === link.section
@@ -115,7 +155,8 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
               >
                 {link.label}
               </a>
-            )}
+              );
+            })}
           </nav>
           {/* Mobile Menu Button */}
           <button 
@@ -132,10 +173,13 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="md:hidden mt-8 pb-6 space-y-6 flex flex-col border-t border-white/20 pt-6">
-            {NAV_LINKS.map(link =>
+            {NAV_LINKS.map(link => {
+              const sectionId = link.href.replace('#', '');
+              return (
               <a
                 key={link.href}
                 href={link.href}
+                  onClick={(e) => handleNavClick(e, sectionId)}
                 className={
                   `${isScrolled ? 'text-gray-900' : 'text-white'} font-light text-sm tracking-wide ` +
                   (activeSection === link.section
@@ -145,7 +189,8 @@ const Navbar = ({ fadeIn = false, activeSection, heroRef }) => {
               >
                 {link.label}
               </a>
-            )}
+              );
+            })}
           </nav>
         )}
       </div>

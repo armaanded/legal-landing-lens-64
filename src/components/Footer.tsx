@@ -1,5 +1,6 @@
 
-import { Link } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -20,21 +21,9 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="mailto:gerald@cattledogadvisory.com" className="text-white hover:text-gold transition-colors">
-                <span className="sr-only">LinkedIn</span>
+                <span className="sr-only">Email</span>
                 <div className="w-8 h-8 border border-white/30 rounded-full flex items-center justify-center hover:border-gold">
-                  <Link className="h-4 w-4" />
-                </div>
-              </a>
-              <a href="mailto:gerald@cattledogadvisory.com" className="text-white hover:text-gold transition-colors">
-                <span className="sr-only">Twitter</span>
-                <div className="w-8 h-8 border border-white/30 rounded-full flex items-center justify-center hover:border-gold">
-                  <Link className="h-4 w-4" />
-                </div>
-              </a>
-              <a href="mailto:gerald@cattledogadvisory.com" className="text-white hover:text-gold transition-colors">
-                <span className="sr-only">Facebook</span>
-                <div className="w-8 h-8 border border-white/30 rounded-full flex items-center justify-center hover:border-gold">
-                  <Link className="h-4 w-4" />
+                  <Mail className="h-4 w-4" />
                 </div>
               </a>
             </div>
@@ -43,11 +32,11 @@ const Footer = () => {
           <div>
             <h3 className=" text-xl font-bold mb-4">Services</h3>
             <ul className="space-y-3 ">
-              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Legal Consulting</a></li>
+              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Fractional GC/CPO Services</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Contract Review</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Corporate Governance</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Regulatory Compliance</a></li>
-              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Risk Assessment</a></li>
+              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Risk Management</a></li>
             </ul>
           </div>
           
@@ -56,7 +45,7 @@ const Footer = () => {
             <ul className="space-y-3 ">
               <li><a href="#about" className="text-white/70 hover:text-gold transition-colors">About Us</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Our Team</a></li>
-              <li><a href="#blog" className="text-white/70 hover:text-gold transition-colors">Blog</a></li>
+              <li><a href="#blog" className="text-white/70 hover:text-gold transition-colors">Intel</a></li>
               <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Careers</a></li>
               <li><a href="#contact" className="text-white/70 hover:text-gold transition-colors">Contact</a></li>
             </ul>
@@ -65,17 +54,17 @@ const Footer = () => {
           <div>
             <h3 className=" text-xl font-bold mb-4">Legal</h3>
             <ul className="space-y-3 ">
-              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Privacy Policy</a></li>
-              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Terms of Service</a></li>
-              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Cookie Policy</a></li>
-              <li><a href="mailto:gerald@cattledogadvisory.com" className="text-white/70 hover:text-gold transition-colors">Disclaimer</a></li>
+              <li><Link to="/privacy-policy" className="text-white/70 hover:text-gold transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className="text-white/70 hover:text-gold transition-colors">Terms of Service</Link></li>
+              <li><Link to="/cookie-policy" className="text-white/70 hover:text-gold transition-colors">Cookie Policy</Link></li>
+              <li><Link to="/disclaimer" className="text-white/70 hover:text-gold transition-colors">Disclaimer</Link></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className=" text-sm text-white/70 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Cattledog Advisory. All rights reserved.
+            &copy; {new Date().getFullYear()} Cattledog Advisory, LLC. All rights reserved.
           </p>
           <p className=" text-sm text-white/70">
             Designed and developed with excellence

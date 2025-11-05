@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 
 const NotFound = () => {
   const location = useLocation();
@@ -13,6 +14,26 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <SEO
+        title="404 - Page Not Found | Cattledog Advisory"
+        description="The page you're looking for doesn't exist. Return to Cattledog Advisory's homepage for professional legal advisory services."
+        keywords="404, page not found, Cattledog Advisory, legal services"
+        url={location.pathname}
+        type="website"
+        robots="noindex, follow"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "404 - Page Not Found",
+          "description": "The page you're looking for doesn't exist. Return to Cattledog Advisory's homepage for professional legal advisory services.",
+          "url": `${import.meta.env.VITE_SITE_URL || 'http://localhost:5173'}${location.pathname}`,
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Cattledog Advisory",
+            "url": import.meta.env.VITE_SITE_URL || 'http://localhost:5173'
+          }
+        }}
+      />
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">404</h1>
         <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>

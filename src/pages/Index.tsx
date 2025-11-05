@@ -8,6 +8,7 @@ import Blog from "@/components/Blog";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -43,12 +44,40 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    console.log('showNavbar:', showNavbar);
-  }, [showNavbar]);
+
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Cattledog Advisory - Solving Problems When The Herd Cannot"
+        description="Independent strategic advisory services for complex business challenges. Expert legal advisory with focus on business law, corporate governance, and strategic legal solutions."
+        keywords="advisory services, business strategy, consulting, Cattledog Advisory, legal advisory, business law, corporate governance, strategic solutions"
+        url="/"
+        image="/images/logo.png"
+        type="website"
+        robots="index, follow"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Cattledog Advisory",
+          "url": import.meta.env.VITE_SITE_URL || 'http://localhost:5173',
+          "logo": `${import.meta.env.VITE_SITE_URL || 'http://localhost:5173'}/images/logo.png`,
+          "description": "Independent strategic advisory services for complex business challenges",
+          "sameAs": [
+            "https://twitter.com/CattledogAdvisory",
+            "https://www.linkedin.com/company/cattledogadvisory"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "gerald@cattledogadvisory.com",
+            "contactType": "customer service"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+          }
+        }}
+      />
       <Navbar fadeIn={showNavbar} activeSection={activeSection} heroRef={heroRef} />
       <main>
         <div ref={heroRef}><Hero onHeadlineDone={() => setShowNavbar(true)} /></div>

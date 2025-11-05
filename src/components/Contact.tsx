@@ -10,6 +10,8 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
@@ -44,30 +46,47 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}
-    `);
+    // Create FormData object for Netlify
+    const formElement = e.target as HTMLFormElement;
+    const formDataToSubmit = new FormData(formElement);
     
-    const mailtoLink = `mailto:gerald@cattledogadvisory.com?subject=${subject}&body=${body}`;
+    // Convert FormData to URLSearchParams
+    const params = new URLSearchParams();
+    formDataToSubmit.forEach((value, key) => {
+      params.append(key, value as string);
+    });
     
-    // Open mailto link
-    window.location.href = mailtoLink;
-    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
     // Reset form
     setFormData({
       name: '',
       email: '',
       message: ''
     });
+        // Clear success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,7 +107,16 @@ ${formData.message}
           </p>
         </div>
         <div className="max-w-xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form 
+            className="space-y-6" 
+            onSubmit={handleSubmit}
+            name="contact"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            {/* Hidden fields for Netlify */}
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
             <div className={`transition-all duration-700 ${stagger[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <label className="block text-gray-700 font-medium mb-2" htmlFor="name">Name</label>
               <input 
@@ -128,7 +156,23 @@ ${formData.message}
                 required
               />
             </div>
-            <button type="submit" className={`w-full py-3 bg-navy text-white font-semibold rounded hover:bg-navy/80 transition-colors transition-all duration-700 ${stagger[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>Send Message</button>
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className={`w-full py-3 bg-navy text-white font-semibold rounded hover:bg-navy/80 transition-colors transition-all duration-700 disabled:opacity-50 disabled:cursor-not-allowed ${stagger[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
+            {submitStatus === 'success' && (
+              <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                Thank you! Your message has been sent successfully. We'll get back to you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                Sorry, there was an error sending your message. Please try again or contact us directly.
+              </div>
+            )}
           </form>
         </div>
       </div>

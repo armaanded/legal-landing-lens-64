@@ -1,0 +1,42 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Prerendering configuration
+[prerender]
+  # Enable prerendering for all pages by default
+  # This ensures that crawlers and social scrapers see the correct meta tags
+  crawl = true
+  
+  # Optional: Specify additional paths to prerender
+  # additionalPaths = ["/about", "/services", "/contact"]
+
+# Redirects for SPA routing (if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for better SEO and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"

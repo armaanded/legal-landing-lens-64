@@ -21,7 +21,6 @@ export default {
 			fontFamily: {
 				sans: ['Roboto'],
 				salaryman: ['Salaryman'],
-				roboto: ['Roboto'],
 			},
 			colors: {
 				navy: '#0A2342',

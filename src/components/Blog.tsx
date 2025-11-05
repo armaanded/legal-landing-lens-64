@@ -51,7 +51,7 @@ const Blog = () => {
         </div>
 
         <div className={`max-w-4xl mx-auto transition-all duration-700 ${stagger[2] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}>
-          <Link to="/blog-post" className="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+          <Link to="/blog/OCPA-compliance-review-of-fortune500-series-1" className="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
             <div className="md:flex">
               <div className="md:w-1/3">
                 <div className="h-64 md:h-full bg-gradient-to-br from-navy to-gold flex items-center justify-center">

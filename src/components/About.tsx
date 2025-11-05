@@ -54,14 +54,18 @@ const About = () => {
             >
               Our mission is to guide leaders and organizations through complex challenges with fresh perspective, strategic thinking, and the courage to recommend unconventional solutions when they're what's needed.
             </p>
-            <a href="mailto:gerald@cattledogadvisory.com">
               <Button 
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
                 variant="outline" 
                 className={`border-gray-900 text-gray-900 hover:text-white hover:bg-gray-900 rounded-none font-medium px-8 py-3 transition-all duration-700 ${stagger[3] ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}`}
               >
                 Get to Know Us More
               </Button>
-            </a>
           </div>
         </div>
       </div>
